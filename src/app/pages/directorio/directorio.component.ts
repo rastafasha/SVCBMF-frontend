@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DirectorioService } from '../../services/directorio.service';
 import { Directorio } from '../../models/directorio';
 import { HttpClient, HttpErrorResponse, HttpBackend } from '@angular/common/http';
-import { Especialidades } from '../../models/especialidades';
-import { EspecialidadService } from '../../services/especialidades.service';
-import { Estados } from '../../models/estados';
-import { EstadosService } from '../../services/estados.service';
 import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-directorio',
@@ -16,10 +13,10 @@ import { environment } from '../../../environments/environment';
 export class DirectorioComponent implements OnInit {
 
   directorios: Directorio;
-  especialidades:Especialidades;
-  estados: Estados;
 
   error: string;
+
+  doctores;
 
   private http: HttpClient;
 
@@ -31,8 +28,6 @@ export class DirectorioComponent implements OnInit {
 
   constructor(
     public directorioService: DirectorioService,
-    public especialidadService: EspecialidadService,
-    public estadoService: EstadosService,
 
     handler: HttpBackend) {
     this.http = new HttpClient(handler);
@@ -45,10 +40,6 @@ export class DirectorioComponent implements OnInit {
       error => this.error = error
     );
 
-   
-    this.cargarEspecialidades();
-
-    this.cargarEstados();
     
   }
 
@@ -58,22 +49,6 @@ export class DirectorioComponent implements OnInit {
   }
 
   
-
-  cargarEspecialidades( ){
-    this.especialidadService.getEspecialidades().subscribe(
-      (data: Especialidades) => this.especialidades = data,
-      error => this.error = error
-    );
-    // console.log(this.especialidadService)
-  }
-
-  cargarEstados(){
-    this.estadoService.getEstados().subscribe(
-      (data: Especialidades) => this.estados = data,
-      error => this.error = error
-    );
-    // console.log(this.estadoService)
-  }
 
   buscarDirectorio( termino: string) {
 
@@ -89,10 +64,39 @@ export class DirectorioComponent implements OnInit {
 
   }
 
+  search( text: string) {// funciona, devuelve la busqueda
 
 
-  
-  
-  
+    if( this.search.length == 0){
+      return;
+    }
+
+    return this.http.get(this.ServerUrl + 'api/search?text=' + text )
+      .toPromise()
+      .then(doctores=>{
+        this.doctores= {'results': JSON.stringify(doctores, null),
+        
+        'json': ()=>{
+          return doctores;
+        }
+        
+      };
+      //this.product= product
+      //console.log("Mostrando resultado final:");
+      //console.log(product);
+
+      // devolver el array     
+      const mapped = Object.keys(doctores)
+      .map(key => ({type: key, value: doctores[key]}));
+
+      
+      
+      console.log(doctores);
+      this.doctores = doctores;
+
+      });
+      
+  }
+
 
 }

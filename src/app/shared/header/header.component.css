@@ -1,0 +1,18 @@
+.topdesk,
+.logodesk {
+    display: block;
+}
+
+.topmovil {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .topdesk,
+    .logodesk {
+        display: none;
+    }
+    .topmovil {
+        display: block;
+    }
+}

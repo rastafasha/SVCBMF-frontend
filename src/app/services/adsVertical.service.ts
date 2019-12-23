@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Especialidades } from '../models/especialidades';
+import { Banvertical } from '../models/ads-vertical';
 import { HttpClient, HttpErrorResponse, HttpBackend } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EspecialidadService {
+export class BanverticalService {
 
   ServerUrl = environment.baseUrl;
   errorData: {};
@@ -18,13 +18,13 @@ export class EspecialidadService {
       this.http = new HttpClient(handler);
   }
 
-  getEspecialidades() {
-    return this.http.get<Especialidades>(this.ServerUrl + 'api/Especialidades');
+  getBanverticals() {
+    return this.http.get<Banvertical>(this.ServerUrl + 'api_banvertical/Banverticals/');
   }
 
 
-  getEspecialidad(id: number) {
-    return this.http.get<Especialidades>(this.ServerUrl + 'api/Especialidad/' + id);
+  getBanvertical(id: number) {
+    return this.http.get<Banvertical>(this.ServerUrl + 'api_banvertical/Banvertical/' + id);
   }
 
 

@@ -8,5 +8,12 @@ export class Directorio {
     email: string;
     direccion: string;
     estado: string;
+    telefonos: string;
+    facebook: string;
+    instagram: string;
+    twitter: string;
+    linkedin: string;
+    image: string;
+    ciudad: string;
 }
 

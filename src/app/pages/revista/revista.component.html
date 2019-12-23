@@ -1,0 +1,39 @@
+<div class="clear"></div>
+<section class="topes" id="libreria">
+    <div class="container">
+        <h1 class="up">Revista</h1>
+    </div>
+</section>
+
+<section class="main degrade1" style="margin-top:-20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>Le invitamos a disfrutar el contenido de nuestra Revista Venezolana de Cirugía Buco-Maxilofacial, con reportajes desarrollados por los mejores especialistas nacionales e internacionales. Avances científicos, nuevas tecnologías, casos de
+                    estudio y muchos más temas de interés tanto para la comunidad científica y educativa, como para el público en general.</h5>
+            </div>
+        </div>
+        <br><br>
+
+
+        <div class="row">
+            <div class="col-sm-6" style="margin-bottom: 20px;" *ngFor=" let revista of revistas ">
+                <div class=" card cardblog">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-5 imgnott nopadd" style="background-size:contain" [ngStyle]="{'background-image': 'url(' + revista.image + ')'}"></div>
+                            <div class="col-xs-12 col-sm-7">
+                                <h5>Volumen: {{revista.volumen}}</h5>
+                                <p>Numero:{{revista.numero}}</p>
+                                <p>Fecha: {{revista.fecha}}</p>
+                                <a href="{{revista.archivo}}" target="_blank">
+                                    <button class="btn boton2"> Ver pdf</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
