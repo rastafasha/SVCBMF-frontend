@@ -25,7 +25,6 @@ export class RevistaComponent implements OnInit {
       (data: Revista) => this.revistas = data,
       error => this.error = error
     );
-    console.log(this.revistaService)
 
   }
 

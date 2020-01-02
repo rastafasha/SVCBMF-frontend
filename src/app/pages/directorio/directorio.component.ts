@@ -52,7 +52,7 @@ export class DirectorioComponent implements OnInit {
 
   buscarDirectorio( termino: string) {
 
-    console.log(termino);
+    //console.log(termino);
     /*if (termino.length <= 0) {
       this.cargarDirectorios();
       return;
@@ -91,7 +91,7 @@ export class DirectorioComponent implements OnInit {
 
       
       
-      console.log(doctores);
+      //console.log(doctores);
       this.doctores = doctores;
 
       });

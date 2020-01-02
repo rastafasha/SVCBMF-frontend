@@ -34,6 +34,8 @@ import { SharedModule } from './shared/shared.modulo';
 import { DirectorioComponent } from './pages/directorio/directorio.component';
 import { ContactFormComponent } from './cmspage/contact-form/contact-form.component';
 
+import { ShareButtonsModule } from '@ngx-share/buttons';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { ContactFormComponent } from './cmspage/contact-form/contact-form.compon
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    SharedModule
+    SharedModule,
+    ShareButtonsModule
   ],
   exports:[
     EscapeHtmlPipe,

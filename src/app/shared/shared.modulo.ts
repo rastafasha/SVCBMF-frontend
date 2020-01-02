@@ -23,7 +23,6 @@ import { FavoritosComponent } from './portal/favoritos/favoritos.component';
 import { PerfilComponent } from './portal/perfil/perfil.component';
 import { GalleriaComponent } from './galleria/galleria.component';
 import { DocumentosSharedComponent } from './documentos-shared/documentos-shared.component';
-import { LoginComponent } from '../auth/login/login.component';
 
 
 
@@ -56,7 +55,6 @@ import { LoginComponent } from '../auth/login/login.component';
         PerfilComponent,
         GalleriaComponent,
         DocumentosSharedComponent,
-        LoginComponent
         
         
     ],

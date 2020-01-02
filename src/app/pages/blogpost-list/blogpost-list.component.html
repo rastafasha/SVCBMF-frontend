@@ -20,11 +20,10 @@
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-xs-12 col-sm-5 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"></div>
-                            <div class="col-xs-12 col-sm-7">
-                                <a href="blog/{{blog.id}}">
+                            <div class="col-xs-12 col-sm-7" style="margin-top: 10px;">
+                                <a href="blog/{{blog.id}}" target="_self">
                                     <h5>{{blog.title}}</h5>
                                 </a>
-                                <p>by <span>{{blog.author}}</span> <br> on <span>{{blog.created_at | date:'mediumDate'}}</span></p>
                                 <p>{{blog.short_desc}}</p>
                             </div>
                         </div>
