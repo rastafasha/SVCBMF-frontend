@@ -16,7 +16,7 @@
 }
 
 :root {
-    --azul: #774477;
+    --azul: #353888;
     --morado: #774477;
 }
 
@@ -106,7 +106,7 @@ h4 {
     color: #774477;
     margin: 0;
     padding: 0;
-    z-index: 999999;
+    z-index: 9;
     position: relative;
 }
 
@@ -161,8 +161,8 @@ ul li {
 }
 
 .circle {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -186,11 +186,11 @@ ul li {
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
+    /*box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
     -o-box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
     -ms-box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
     -webkit-box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
-    -moz-box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;
+    -moz-box-shadow: 0px 24px 23px rgba(250, 250, 250, 0.5) inset;*/
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
 }
@@ -203,7 +203,6 @@ ul li {
 }
 
 .logo {
-    background-image: url(../img/logocon60.png);
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -232,6 +231,46 @@ ul li {
 
 .lug img {
     width: 98%
+}
+
+.rb-box-img img {
+    border: 1px solid #ccc;
+}
+
+.movil {
+    display: none;
+}
+
+.ipad {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+
+@media(max-width:480px) {
+    .movil {
+        display: block;
+    }
+    .ipad {
+        display: none;
+    }
+    .desktop {
+        display: none;
+    }
+}
+
+@media(min-width:481px) {
+    .movil {
+        display: none;
+    }
+    .ipad {
+        display: block;
+    }
+    .desktop {
+        display: block;
+    }
 }
 
 .social i {
@@ -343,17 +382,21 @@ ul li {
 
 .quebaria h1 {
     font-family: 'HelveticaNeueLTStd-Lt';
-    padding-top: 70px;
+    color: #fff;
+    z-index: 20;
+    position: relative;
+    padding-top: 230px
+}
+
+.quebaria h4 {
+    font-family: 'HelveticaNeueLTStd-Lt';
     color: #fff;
     z-index: 20;
     position: relative;
 }
 
-.quebaria h3 {
-    font-family: 'HelveticaNeueLTStd-Lt';
-    color: #fff;
-    z-index: 20;
-    position: relative;
+.quebaria img {
+    top: -80px;
 }
 
 .quebaria p {
@@ -387,7 +430,14 @@ ul li {
     .quebaria {
         min-height: 100px;
         height: auto;
-        min-height: 460px;
+    }
+    .quebaria h1 {
+        padding-top: 30px;
+        font-size: 14px;
+    }
+    .quebaria img {
+        top: 10px;
+        width: 50%;
     }
 }
 
@@ -667,9 +717,13 @@ ul li {
 }
 
 .mapa {
-    height: 550px;
-    margin-bottom: 20px;
+    height: auto;
     position: relative;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 450px;
 }
 
 .tope h1 {
@@ -690,6 +744,13 @@ ul li {
     padding-bottom: 30px;
     min-height: 250px;
     height: auto;
+}
+
+@media(max-width:480px) {
+    .mapa,
+    .mapa iframe {
+        height: 250px;
+    }
 }
 
 @media(max-width:768px) {
@@ -1036,6 +1097,14 @@ td {
     color: #ccfff2;
 }
 
+.movil {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+
 
 /*--- col-5---*/
 
@@ -1054,10 +1123,25 @@ td {
     float: left;
 }
 
+@media (max-width: 768px) {
+    .movil {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
     .col-sm-5 {
         width: 20%;
         float: left;
+    }
+    .movil {
+        display: none;
+    }
+    .desktop {
+        display: block;
     }
 }
 
@@ -1073,4 +1157,12 @@ td {
         width: 20%;
         float: left;
     }
+}
+
+.aliado {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    float: left;
+    width: 20%;
 }

@@ -19,6 +19,7 @@ export class BlogpostRecentComponent implements OnInit {
       (data: Blog) => this.blogs = data,
       error => this.error = error
     );
+    
   }
 
 }

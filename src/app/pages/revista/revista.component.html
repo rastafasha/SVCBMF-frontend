@@ -5,34 +5,41 @@
     </div>
 </section>
 
-<section class="main degrade1" style="margin-top:-20px">
+<section class="main" style="margin-top:-20px">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <h5>Le invitamos a disfrutar el contenido de nuestra Revista Venezolana de Cirugía Buco-Maxilofacial, con reportajes desarrollados por los mejores especialistas nacionales e internacionales. Avances científicos, nuevas tecnologías, casos de
-                    estudio y muchos más temas de interés tanto para la comunidad científica y educativa, como para el público en general.</h5>
+            <div class="col-12">
+                <h5>Le invitamos a disfrutar el contenido de nuestra Revista Venezolana de Cirugía Buco-Maxilofacial</h5>
+                <p> con reportajes desarrollados por los mejores especialistas nacionales e internacionales. Avances científicos, nuevas tecnologías, casos de estudio y muchos más, temas de interés tanto para la comunidad científica y educativa, como para
+                    el público en general.</p>
             </div>
         </div>
         <br><br>
 
+        <div class="grupo caja fr-view mt-1" *ngFor=" let revista of revistas | keys | paginate: { itemsPerPage: count, currentPage: p }">
 
-        <div class="row">
-            <div class="col-sm-6" style="margin-bottom: 20px;" *ngFor=" let revista of revistas ">
-                <div class=" card cardblog">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-5 imgnott nopadd" style="background-size:contain" [ngStyle]="{'background-image': 'url(' + revista.image + ')'}"></div>
-                            <div class="col-xs-12 col-sm-7">
-                                <h5>Volumen: {{revista.volumen}}</h5>
-                                <p>Numero:{{revista.numero}}</p>
-                                <p>Fecha: {{revista.fecha}}</p>
-                                <a href="{{revista.archivo}}" target="_blank">
-                                    <button class="btn boton2"> Ver pdf</button>
-                                </a>
-                            </div>
+            <a href="{{revista.archivo}}" target="_blank">
+                <div class="grupo cancion ">
+                    <img src="assets/img/pdf-icon.png" alt="">
+                    <div class="caja ">
+                        <h3 class="cancion__titulo">
+                            Volumen: {{revista.volumen}} | Numero:{{revista.numero}} | Fecha: {{revista.fecha}}
+                        </h3>
+                    </div>
+                    <div class="caja ">
+                        <div class="cancion__opciones">
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
+            </a>
+            <div class="clea"></div><br>
+
+        </div>
+        <!--Including the pagination control.-->
+        <div class="row mt-4 mb-4">
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
         </div>
     </div>

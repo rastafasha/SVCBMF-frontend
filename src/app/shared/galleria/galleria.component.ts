@@ -3,6 +3,7 @@ import { GaleriaService } from '../../services/galeria.service';
 import { Galeria } from '../../models/galeria';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpBackend } from '@angular/common/http';
+import {  } from 'ngx-pagination';
 
 @Component({
   selector: 'app-galleria',
@@ -18,11 +19,13 @@ export class GalleriaComponent implements OnInit {
   private http: HttpClient;
 
   ServerUrl = environment.baseUrl;
+
+  collection = [];
   p: Number = 1;
   count: Number = 5;
+  
 
   constructor(public galeriaService: GaleriaService,){
-    
   }
 
   

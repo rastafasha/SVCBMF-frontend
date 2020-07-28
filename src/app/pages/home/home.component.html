@@ -12,25 +12,25 @@
         <div class="row">
             <div class="col-6 col-sm-3 ">
                 <div class="bordAex iconText">
-                    <a href="documentos"><i class="fa fa-gavel"></i></a>
+                    <a routerLink='/documentos'><i class="fa fa-gavel"></i></a>
                     <h3>Documentos</h3>
                 </div>
             </div>
             <div class="col-6 col-sm-3 ">
                 <div class="bordAex iconText">
-                    <a href="revista"><i class="fa fa-file-text"></i></a>
+                    <a routerLink='/revista'><i class="fa fa-file-text"></i></a>
                     <h3>Revista Científica</h3>
                 </div>
             </div>
             <div class="col-6 col-sm-3 ">
                 <div class="bordAex iconText">
-                    <a href="solvencias"><i class="fa fa-medkit"></i></a>
+                    <a routerLink='/tips'><i class="fa fa-medkit"></i></a>
                     <h3>Area Pacientes</h3>
                 </div>
             </div>
             <div class="col-6 col-sm-3 ">
                 <div class="bordAex iconText">
-                    <a href="directorio"><i class="fa fa-user-md"></i></a>
+                    <a routerLink='/directorio'><i class="fa fa-user-md"></i></a>
                     <h3>Directorio</h3>
                 </div>
             </div>
@@ -38,6 +38,9 @@
         <div class="clear"></div> <br><br><br>
         <!---ADS horizontal rectangular--->
         <app-banhorizontal></app-banhorizontal>
+
+
+
     </div>
 </section>
 
@@ -56,12 +59,12 @@
     <div class="container">
         <div class="row">
             <!--Directorio home-->
-            <div class="directorio col-xs-12 col-sm-9">
+            <div class="directorio col-xs-12 col-sm-4 col-md-7 col-lg-8">
                 <app-blog-home></app-blog-home>
             </div>
 
             <!---lateral ads--->
-            <div class="col-xs-12 col-sm-3">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <app-banvertical></app-banvertical>
             </div>
 
@@ -98,25 +101,17 @@
 
 <section class="main ">
     <div class="container">
-        <div class="col-12 ">
-            <div class="row">
-                <div class="col-6 col-sm-2 ">
-                    <a href="https://www.elcov.org/" target="_blank"><img src="assets/img/sponsors/logo-COV.jpg" alt="Colegio de Odontologos de Venezuela "></a>
-                </div>
-                <div class="col-6 col-sm-2 ">
-                    <img src="assets/img/sponsors/cabezabombillo.jpg" alt="Sociedad venezolana de cirugia bucomaxilofacial ">
-                </div>
-                <div class="col-6 col-sm-2 ">
-                    <a href="https://www.aaoms.org/" target="_blank"><img src="assets/img/sponsors/logo-aaoms.jpg" alt="Sociedad venezolana de cirugia bucomaxilofacial AAOMS"></a>
-                </div>
-                <div class="col-6 col-sm-2 ">
-                    <a href="http://www.alacibu.org/" target="_blank"><img src="assets/img/sponsors/logo-alacibu.jpg" alt="Sociedad venezolana de cirugia bucomaxilofacial ALACIBU"></a>
-                </div>
-                <div class="col-6 col-sm-2 ">
-                    <a href="http://www.iaoms.org/" target="_blank"><img src="assets/img/sponsors/logo-iaoms.jpg" alt="Sociedad venezolana de cirugia bucomaxilofacial IAOMS"></a>
+        <div class="">
+            <div *ngFor="let aliado of aliados ">
+                <div class="aliado">
+                    <a href="{{aliado.enlace}}" target="{{aliado.target}}">
+                        <img src="{{aliado.image}}" alt="Sociedad venezolana de cirugia bucomaxilofacial {{aliado.title}} ">
+                    </a>
                 </div>
             </div>
 
+
         </div>
+
     </div>
 </section>

@@ -20,6 +20,7 @@ export class ContactFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
   }
 
   onSubmit() {
@@ -28,6 +29,7 @@ export class ContactFormComponent implements OnInit {
       data => this.model = data,
       error => this.error = error
     );
+    
   }
 
   gotoHome() {

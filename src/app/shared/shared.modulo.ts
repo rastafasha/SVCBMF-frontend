@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// paginacion
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -26,17 +28,13 @@ import { DocumentosSharedComponent } from './documentos-shared/documentos-shared
 
 
 
-
-
-
-
-
 @NgModule({
     imports: [
         RouterModule,
         CommonModule,
         CarouselModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgxPaginationModule
     ],
     declarations: [
         HeaderComponent,

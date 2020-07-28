@@ -16,26 +16,26 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   getBlogs() {
-    return this.http.get<Blog>(this.serverUrl + 'api/blogs/').pipe(
+    return this.http.get<Blog>(this.serverUrl + 'api_blog/blogs/').pipe(
       catchError(this.handleError)
     );
   }
 
   getFeaturedBlogs() {
-    return this.http.get<Blog>(this.serverUrl + 'api/featured_blogs/').pipe(
+    return this.http.get<Blog>(this.serverUrl + 'api_blog/featured_blogs/').pipe(
       catchError(this.handleError)
     );
   }
 
   getBlog(id: number) {
-    return this.http.get<Blog>(this.serverUrl + 'api/blog/' + id)
+    return this.http.get<Blog>(this.serverUrl + 'api_blog/blog/' + id)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   getRecentBlogs() {
-    return this.http.get<Blog>(this.serverUrl + 'api/recent_blogs/').pipe(
+    return this.http.get<Blog>(this.serverUrl + 'api_blog/recent_blogs/').pipe(
       catchError(this.handleError)
     );
   }

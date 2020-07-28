@@ -19,9 +19,9 @@
                     <form class="form-horizontal">
                         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                             <div class="input-group">
-                                <input type="search" name="search" #input (keyup)="search(input.value)" type="text" class="form-control col-xs-12" placeholder="Buscar por Nombre, Especialidad o Estado" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                                <input type="search" name="search" #input (keyup)="search(input.value)" type="text" class="form-control col-xs-12" placeholder="Buscar.." aria-describedby="button-addon1" class="form-control border-0 bg-light">
                                 <div class="input-group-append">
-                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary" (click)="search(input.value)" name="submit"><i class="fa fa-search"></i></button>
+                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary" (click)="search(input.value)" name="submit" data-toggle="tooltip" title="mostrar todos"><i class="fa fa-search"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                     <!--div class="col-sm-6 col-md-4 fr-view" *ngFor=" let directorio of directorios"-->
                     <div class=" card cardhome scrollbar" id="style-3">
                         <div class="card-body ">
-                            <img src="https://www.maxilofaciallatrinidad.com/server/media/images/directorio/{{doctores.image}}" class="img-circle">
+                            <img src="{{ServerUrl}}media/images/directorio/{{doctores.image}}" class="img-circle">
                             <h5> {{doctores.nombre}}</h5>
                             <div class="clear"></div> <br>
                             <p> <i class="fa fa-sitemap"></i> {{doctores.especialidad}}</p>
@@ -57,7 +57,7 @@
             <!--Including the pagination control.-->
             <div class="row mt-4 mb-4">
                 <div class="text-center">
-                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    <pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
                 </div>
             </div>
         </div>

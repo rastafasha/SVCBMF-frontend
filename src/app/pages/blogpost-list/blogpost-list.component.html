@@ -10,7 +10,7 @@
         <!--Including the pagination control.-->
         <div class="row mt-4 mb-4">
             <div class="text-center">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                <pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
         </div>
         <div class="row">
@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-5 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"></div>
                             <div class="col-xs-12 col-sm-7" style="margin-top: 10px;">
-                                <a href="blog/{{blog.id}}" target="_self">
+                                <a [routerLink]="['/blog', blog.id]">
                                     <h5>{{blog.title}}</h5>
                                 </a>
                                 <p>{{blog.short_desc}}</p>

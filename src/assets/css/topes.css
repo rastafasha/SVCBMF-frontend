@@ -20,7 +20,7 @@
     content: '';
     width: 100%;
     height: initial;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: absolute;
     height: inherit;
@@ -51,7 +51,7 @@
     content: '';
     width: 100%;
     height: initial;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: absolute;
     height: inherit;
@@ -149,7 +149,7 @@
 @media only screen and (max-width: 768px) {
     .topes h1 {
         font-size: 30px;
-        padding-top: 90px;
+        padding-top: 50px;
     }
     .call-to-action {
         background: center bottom/cover no-repeat scroll;
@@ -163,5 +163,27 @@
     .topes h1 {
         font-size: 60px;
         padding-top: 80px;
+    }
+}
+
+.topescongreso {
+    height: 350px;
+    background-image: url('../img/slider/homecongreso.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topescongreso .btn {
+    color: #fff;
+    border-color: #fff;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+    .topes {
+        z-index: 1;
+        position: relative;
+        height: 270px;
+        margin-bottom: 20px;
+        position: relative;
     }
 }

@@ -29,6 +29,8 @@ export class BlogpostDetailComponent implements OnInit {
         this.blogService.getBlog(+params.get('id'))
       )
     );
+    
+    window.scrollTo(0,0);
 
     //this.titleService.setTitle('SVCBMF - Blog Detail');
   }

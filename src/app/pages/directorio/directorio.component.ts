@@ -39,7 +39,7 @@ export class DirectorioComponent implements OnInit {
       (data: Directorio) => this.directorios = data,
       error => this.error = error
     );
-
+    window.scrollTo(0,0);
     
   }
 
@@ -71,7 +71,7 @@ export class DirectorioComponent implements OnInit {
       return;
     }
 
-    return this.http.get(this.ServerUrl + 'api/search?text=' + text )
+    return this.http.get(this.ServerUrl + 'api_directorio/search?text=' + text )
       .toPromise()
       .then(doctores=>{
         this.doctores= {'results': JSON.stringify(doctores, null),

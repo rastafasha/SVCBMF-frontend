@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpBackend } from '@angula
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { Congreso } from './congreso';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,7 @@ export class CmspageService {
       catchError(this.handleError)
     );
   }
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

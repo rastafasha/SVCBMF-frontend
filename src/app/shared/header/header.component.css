@@ -16,3 +16,25 @@
         display: block;
     }
 }
+
+.nav-menu a {
+    font-family: 'HelveticaNeueLTPro-Md';
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #191c79;
+}
+
+.botondestacado {
+    border: 1px solid var(--morado);
+    border-radius: 4px;
+    background-color: #191c79);
+    color: #fff;
+}
+
+@media(max-width:768px) {
+    .botondestacado {
+        border: 1px solid transparent;
+        color: #fff;
+        background-color: transparent);
+    }
+}

@@ -242,6 +242,14 @@ h6 {
     margin: 0;
 }
 
+@media(min-width:770px) {
+    #nav-menu-container {
+        float: right;
+        margin: 0;
+        background-color: #fff;
+    }
+}
+
 
 /* Nav Meu Styling */
 

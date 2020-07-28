@@ -1,0 +1,369 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h4 class="text-dark"><b>A través de este formulario podrá inscribirse de manera práctica y fácil en el</b> </h4>
+            <h1>XXIX Congreso Nacional de Cirugía Buco-Maxilofacial </h1>
+            <h4>Hotel Eurobuilding Caracas del 2 al 4 de Julio de 2020.</h4>
+
+        </div>
+
+        <div class="col-12 shadow" style="border: 1px solid red; padding: 10px; border-radius: 4px; margin-bottom: 60px; text-align: center;">
+            <p><b>Para empezar el proceso de inscripción,</b> <br> por favor rellene los campos obligatorios con la información solicitada para cada sección <br> y luego pulse el botón "Enviar</p>
+
+        </div>
+        <br><br>
+        <div class="col-12 col-sm-6">
+
+            <h6>Es Importante Tener en cuenta:</h6>
+            <p>Por favor tome nota de que si va a pagar por transferencia bancaria via Zelle o usando el modulo de pago Online (tarjeta de crédito o PayPal) Tome una foto o print screen de dicha transacción donde se detallen sus datos, correo electrónico
+                y código de confirmación. </p>
+        </div>
+        <div class="col-12 col-sm-6">
+            <p>De realizar el pago de manera presencial, en los puntos de recepción de pago y demás operativos móviles que serán informados periodicamente por la red social oficial de la Sociedad en Instragram: @svcbmf
+                <br><br> Favor adjuntar la foto del comprobante entregado por nuestro equipo.</p>
+            <br>
+            <h6>Gracias por venir a compartir con nosotros!<br> Ahora si! Inscribete y reserva tu ticket!</h6>
+        </div>
+    </div>
+</div>
+
+
+<section class="cmspage mt-4 contact">
+    <div class="container barraseccion">
+        <div class="page-desc" [hidden]="submitted">
+            <div class=" justify-content-center">
+
+                <div class="col-xs-12">
+                    <h1>Formulario de Incripcion en el Evento</h1>
+                    <form (ngSubmit)="onSubmit()" #congressForm="ngForm" autocomplete="off" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group camp col-12 pt-1 mb-5 pb-1  ">
+                                <h3> 1-Datos Personales del Participante </h3>
+                            </div>
+
+                            <div class="form-group camp col-sm-6 col-12 col-md-4">
+                                <label>Nombre</label>
+                                <input type="text" name="nombre" id="nombre" [(ngModel)]="model.nombre" class="form-control" required #nombre="ngModel">
+                                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
+                                    <div *ngIf="nombre?.errors.required">
+                                        Nombre es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-12 col-md-4">
+                                <label>Apellido</label>
+                                <input type="text" name="apellido" id="apellido" [(ngModel)]="model.apellido" class="form-control" required #apellido="ngModel">
+                                <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" class="error">
+                                    <div *ngIf="apellido?.errors.required">
+                                        Apellido es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-12 col-md-4">
+                                <label>Cédula o pasaporte</label>
+                                <input type="text" name="cedulapassport" id="cedulapassport" [(ngModel)]="model.cedulapassport" class="form-control" required #cedulapassport="ngModel">
+                                <div *ngIf="cedulapassport.invalid && (cedulapassport.dirty || cedulapassport.touched)" class="error">
+                                    <div *ngIf="cedulapassport?.errors.required">
+                                        Identificacion es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-12 col-md-4">
+                                <label>Fecha de Nacimiento</label>
+                                <input type="date" name="fechaNac" [(ngModel)]="model.fechaNac" id="fechaNac" max="3000-12-31" min="1000-01-01" class="form-control" placeholder="mm/dd/yyyy" required #fechaNac="ngModel">
+                                <div *ngIf="fechaNac.invalid && (fechaNac.dirty || fechaNac.touched)" class="error">
+                                    <div *ngIf="fechaNac?.errors.required">
+                                        fecha de nacimiento es requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group camp col-sm-6 col-12 col-md-4">
+                                <label>Edad</label>
+                                <input type="number" name="edad" id="edad" [(ngModel)]="model.edad" class="form-control" required #edad="ngModel">
+                                <div *ngIf="edad.invalid && (edad.dirty || edad.touched)" class="error">
+                                    <div *ngIf="edad?.errors.required">
+                                        edad es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Teléfono</label>
+
+                                <input type="text" name="telefono" id="telefono" [(ngModel)]="model.telefono" class="form-control" required #telefono="ngModel">
+                                <div *ngIf="telefono.invalid && (cedulapassport.dirty || telefono.touched)" class="error">
+                                    <div *ngIf="telefono?.errors.required">
+                                        Teléfono es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Email</label>
+                                <input type="text" name="email" id="email" [(ngModel)]="model.email" class="form-control" required email #email="ngModel">
+                                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                                    <div *ngIf="email?.errors.required"> {{ 'Email es requerido.' }}</div>
+                                    <div *ngIf="email?.errors.email"> {{ 'Email must be a valid email address.' }}</div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Verificación Email</label>
+                                <input type="text" name="verificaemail" id="verificaemail" [(ngModel)]="model.verificaemail" class="form-control" required verificaemail #verificaemail="ngModel">
+                                <div *ngIf="verificaemail.invalid && (verificaemail.dirty || verificaemail.touched)" class="error">
+                                    <div *ngIf="verificaemail?.errors.required"> {{ 'Verificar Email es requerido.' }}</div>
+                                    <div *ngIf="verificaemail?.errors.email"> {{ 'Email must be a valid email address.' }}</div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-4 ">
+                                <label>Dirección Profesional</label>
+                                <textarea name="dirprofesional" [(ngModel)]="model.dirprofesional" id="dirprofesional" class="form-control"></textarea>
+
+                            </div>
+
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label for="exampleFormControlSelect1">Nacionalidad</label>
+                                <select class="form-control" [(ngModel)]="model.nacionalidad" name="nacionalidad" id="nacionalidad" required>
+                                    <option disabled selected>Selecciona una opción</option>
+                                        <option value="Venezolano">Venezolano</option>
+                                        <option value="Extrangero">Extrangero</option>
+                                    </select>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label>Pais</label>
+                                <input type="text" name="pais" id="pais" [(ngModel)]="model.pais" class="form-control" required #pais="ngModel" required>
+                                <div *ngIf="pais.invalid && (pais.dirty || pais.touched)" class="error">
+                                    <div *ngIf="pais?.errors.required">
+                                        pais es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label for="exampleFormControlSelect1">Membresía</label>
+                                <select class="form-control" [(ngModel)]="model.membresia" name="membresia" id="membresia">
+                                        <option value="ninguno">--Favor seleccione ---</option>
+                                        <option value="Miembro Activo SVCBMF">Miembro Activo SVCBMF</option>
+                                        <option value="Miembro Adherente">Miembro Adherente</option>
+                                        <option value="No Miembro">No Miembro</option>
+                                    </select>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label for="exampleFormControlSelect1">Condición Académica</label>
+                                <select class="form-control" [(ngModel)]="model.condicionAcademica" name="condicionAcademica" id="condicionAcademica" required>
+                                    <option disabled selected>Selecciona una opción</option>
+                                        <option value="Estudiante Pregrado">Estudiante Pregrado</option>
+                                        <option value="Residente">Residente</option>
+                                        <option value="Especialista">Especialista</option>
+                                        <option value="Odontólogo o Médico general">Odontólogo o Médico general</option>
+                                        <option value="Especialista">Otro</option>
+                                    </select>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label for="">Especialidad</label>
+                                <input type="text" name="especialidad" id="especialidad" [(ngModel)]="model.especialidad" class="form-control" required #especialidad="ngModel">
+                                <div *ngIf="especialidad.invalid && (especialidad.dirty || especialidad.touched)" class="error">
+                                    <div *ngIf="especialidad?.errors.required">
+                                        Especiliadad es requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clear"></div><br>
+
+                        <div class="row">
+                            <div class="form-group camp col-12 pt-1 pb-1 mb-5  ">
+                                <h3>2- Tipo de Inscripción en el Congreso</h3>
+                            </div>
+                            <div class="form-group camp col-sm-6 col-md-4">
+                                <label for="exampleFormControlSelect1">Tipo de Inscripción</label>
+                                <select class="form-control" [(ngModel)]="model.tipoPagonscripcion" name="tipoPagonscripcion" id="tipoPagonscripcion" required>
+                                    <option disabled selected>Selecciona una opción</option>
+                                            <option value="Miembro Solvente SVCBMF US$ 60,00.">Miembro Solvente SVCBMF US$ 60,00.</option>
+                                            <option value="Estudiante o Residente Venezolano US$ 80,00.">Estudiante o Residente Venezolano US$ 80,00.</option>
+                                            <option value="Inscripción General Venezolanos (Odontólogo, Médico, Otros) US$ 145,00.">Inscripción General Venezolanos (Odontólogo, Médico, Otros) US$ 145,00.</option>
+                                            <option value="Participantes Extranjeros US$ 170,00">Participantes Extranjeros US$ 170,00</option>
+                                        </select>
+
+                            </div>
+                        </div>
+
+                        <div class="clear"></div><br>
+
+                        <div class="row">
+                            <div class="form-group camp col-12 pt-1 pb-1 mb-5 ">
+                                <h3>3-Actividades Extras y Membresía SVCBMF </h3>
+                                <p><b>Nota:</b> Favor colocar el monto cancelado en el recuadro que corresponda:</p>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Cursos / Actividades extras</label>
+                                <input type="text" name="cursos" id="cursos" [(ngModel)]="model.cursos" class="form-control" required #cursos="ngModel">
+                                <div *ngIf="cursos.invalid && (cursos.dirty || cursos.touched)" class="error">
+                                    <div *ngIf="cursos?.errors.required">
+                                        Especiliadad es requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Descripción</label>
+                                <textarea name="descripcionCursos" [(ngModel)]="model.descripcionCursos" id="descripcionCursos" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Anualidades de la SVCBMF</label>
+                                <input type="text" name="anualidades" id="anualidades" [(ngModel)]="model.anualidades" class="form-control" required #anualidades="ngModel">
+                                <div *ngIf="anualidades.invalid && (anualidades.dirty || anualidades.touched)" class="error">
+                                    <div *ngIf="anualidades?.errors.required">
+                                        Anualidades es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Inscripción en la SVCBMF para postulante admitido</label>
+                                <input type="text" name="inscripcionSvcbmf" id="inscripcionSvcbmf" [(ngModel)]="model.inscripcionSvcbmf" class="form-control" required #inscripcionSvcbmf="ngModel">
+                                <div *ngIf="inscripcionSvcbmf.invalid && (inscripcionSvcbmf.dirty || inscripcionSvcbmf.touched)" class="error">
+                                    <div *ngIf="inscripcionSvcbmf?.errors.required">
+                                        Inscripción en la SVCBMF es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12  col-sm-6 col-md-4">
+                                <label>Otros ítems pagados:</label>
+                                <textarea name="otrosItemsPagados" [(ngModel)]="model.otrosItemsPagados" id="otrosItemsPagados" class="form-control"></textarea>
+
+                            </div>
+                            <div class="form-group camp col-12 ">
+                                <label>Favor Describir Otros ítems pagados (previa gestión por parte del comité organizador) :</label>
+                                <textarea name="descOtrosItemsPagados" [(ngModel)]="model.descOtrosItemsPagados" id="descOtrosItemsPagados" class="form-control"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="clear"></div> <br><br>
+
+                        <div class="row">
+                            <div class="form-group camp col-12 pt-1 pb-1 mb-5 ">
+                                <h3>4-Datos de la Transacción y Método de Pago Realizado </h3>
+                                <p>para Formalizar la Inscripción y Demas Ítems Adquirirdos.</p>
+
+                            </div>
+
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-6 shadow" style="border: 1px solid #ccc; padding: 20px;">
+                                <h4>Ruta de Inscripción y transferencias Zelle.</h4><br><br>
+                                <p><b>Banco:</b> AMERANT </p>
+                                <p><b>Zelle:</b> pagos@congresobucomaxilofacial.com</p>
+                                <p><b>A nombre de:</b> Paul Maurette</p>
+                                <p><b>Checking account:</b> 7500713306</p>
+                                <p><b>Número de Aba (routing):</b> 067010509</p>
+                                <p><b>SWIFT:</b> MNBMUS33</p><br>
+                                <p>Favor realizar el pago antes de llenar este formulario ya que deberá cargar el comprobante. Recomendamos colocar en la descripción del pago via ZELLE la explicación de los montos pagados y que totalicen el valor de las
+                                    transacción realizada. </p>
+                            </div>
+
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-3">
+                                <label for="">Tipo de pago</label>
+
+                                <select class="form-control" [(ngModel)]="model.tipoPago" ng-options="color.name for color in colors" name="tipoPago" id="tipoPago" required ng-model="tipoPago">
+                                    <option disabled selected>Selecciona una opción</option>
+                                            <option value="Zelle">Zelle</option>
+                                            <option value="Paypal" >Paypal</option>
+                                            <option value="Pago Electrónico Tarjeta">Pago Electrónico Tarjeta</option>
+                                            <option value="Transferencia Bancaria Online">Transferencia Bancaria Online</option>
+                                            <option value="Personalmente en Efectivo o tarjeta en el Stand ">Personalmente en Efectivo o tarjeta en el Stand</option>
+                                            
+                                        </select>
+
+                                <!--boton pago paypal-->
+                                <br><br>
+                                <div *ngIf="model.tipoPago === 'Paypal'" id="Paypal">
+                                    <div class="col-xs-12">
+                                        <a data-toggle="modal" data-target="#pagopaypal" class="btn btn-success text-light"><i class="fa fa-paypal"></i> Pagar por Paypal</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="clear"></div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-3">
+                                <label class="col-12">Imagen de pago realizado:</label>
+                                <input type="file" name="image" id="image" required [(ngModel)]="model.image" #image="ngModel">
+                                <div *ngIf="image.invalid && (image.dirty || image.touched)" class="error">
+                                    <div *ngIf="image?.errors.required">
+                                        imagen es requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="clear"></div>
+                        <br><br>
+                        <div class="row">
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+
+                                <label>Código de confirmación</label>
+
+                                <input type="text" name="codConfirmacion" id="codConfirmacion" [(ngModel)]="model.codConfirmacion" class="form-control" required #codConfirmacion="ngModel">
+                                <div *ngIf="codConfirmacion.invalid && (codConfirmacion.dirty || codConfirmacion.touched)" class="error">
+                                    <div *ngIf="codConfirmacion?.errors.required">
+                                        Código de confirmación es requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Monto Cancelado</label>
+
+                                <input type="text" name="montocancelado" id="montocancelado" [(ngModel)]="model.montocancelado" class="form-control" required #montocancelado="ngModel">
+                                <div *ngIf="montocancelado.invalid && (montocancelado.dirty || montocancelado.touched)" class="error">
+                                    <div *ngIf="montocancelado?.errors.required">
+                                        montocancelado es requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group camp col-12 col-sm-6 col-md-4">
+                                <label>Fecha en que realizó la transacción</label>
+                                <input type="date" name="fecha" [(ngModel)]="model.fecha" id="fecha" max="3000-12-31" min="1000-01-01" class="form-control" required placeholder="mm/dd/yyyy">
+                            </div>
+
+                            <div class="clear"></div><br><br>
+                            <div class="form-group camp col-12 ">
+                                <label>Observaciones</label>
+                                <textarea name="observaciones" [(ngModel)]="model.observaciones" id="observaciones" class="form-control"></textarea>
+
+                            </div>
+                        </div>
+                        <br>
+                        <p>Para mas información contactanos: <a href="mailto:secretaria@congresobucomaxilofacial.com " target="_blank">secretaria@congresobucomaxilofacial.com </a>
+                        </p>
+                        <div class="clear"></div>
+                        <br>
+                        <br>
+
+                        <div class="row">
+
+                            <div class="form-group col-12 text-center">
+                                <button [disabled]="!congressForm.form.valid" class="btn btn-outline-success col-12 col-sm-4 btn-lg text-center"> Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="service-error" *ngIf="error">
+            <h3>{{error.errorTitle}}</h3>
+            <h4>{{error.errorDesc}}</h4>
+        </div>
+        <div [hidden]="!submitted" class="contact-message">
+            <div *ngIf="model.id" class="contact-success">
+                <h3 class="success"> {{ 'Gracias!' }}</h3>
+                <h4> {{ 'Su mensaje ha sido enviado' }}</h4>
+            </div>
+        </div>
+    </div>
+</section>

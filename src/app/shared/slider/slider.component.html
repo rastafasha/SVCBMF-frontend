@@ -7,18 +7,38 @@
     </ol-->
 
     <!-- Wrapper for Slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" *ngFor="let slider of sliders | slice:0:1 ">
 
         <div class="item active">
-            <div class="BannPpal3 BannPpal sli header" id="sli2" style="background-image:url(./assets/img/upload/blog/966331.jpg)">
-                <div class="container">
-                    <div class="textos">
-                        <h3 class="Up">Bienvenido al nuevo site de SVCBMF. </h3>
-                        <p class="Up">Conozca el nuevo site</p>
-                        <a routerLink="nosotros"><button class="boton2 col-xs-12 col-sm-2 Up">+ Info</button></a>
-                    </div>
-                </div>
+            <div class="desktop">
+                <div class="BannPpal1 BannPpal sli header" [ngStyle]="{'background-image': 'url(' + slider.image + ')'}">
+                    <div class="container">
+                        <div class="textos">
+                            <h3 class="Up {{slider.is_activeText}}">{{slider.title}}</h3>
+                            <p class="Up {{slider.is_activeText}}">{{slider.description}}</p><br><br>
+                            <div class="text-center">
+                                <a href="{{slider.enlace}}" target="{{slider.target}}" class="btn btn-outline-light btn-lg {{slider.is_activeBot}}">{{slider.boton}}  </a>
 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="movil">
+                <div class="BannPpal1 BannPpal sli header" [ngStyle]="{'background-image': 'url(' + slider.imagemovil + ')'}">
+                    <div class="container">
+                        <div class="textos">
+                            <h3 class="Up {{slider.is_activeText}}">{{slider.title}}</h3>
+                            <p class="Up {{slider.is_activeText}}">{{slider.description}}</p><br><br>
+                            <div class="text-center">
+                                <a href="{{slider.enlace}}" target="{{slider.target}}" class="btn btn-outline-light btn-lg {{slider.is_activeBot}}">{{slider.boton}}  </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 

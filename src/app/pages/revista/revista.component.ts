@@ -15,6 +15,9 @@ export class RevistaComponent implements OnInit {
   private http: HttpClient;
   error: string;
 
+  p: Number = 1;
+  count: Number = 4;
+
   ServerUrl = environment.baseUrl;
 
   constructor(public revistaService: RevistaService) { }
@@ -26,6 +29,7 @@ export class RevistaComponent implements OnInit {
       error => this.error = error
     );
 
+    window.scrollTo(0,0);
   }
 
 }

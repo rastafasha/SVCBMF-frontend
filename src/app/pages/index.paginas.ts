@@ -1,3 +1,4 @@
+
 // paginas
 export {HomeComponent} from '../pages/home/home.component';
 
@@ -13,11 +14,21 @@ export { JuntaRegionalComponent } from './junta-regional/junta-regional.componen
 export { BlogpostDetailComponent } from './blogpost-detail/blogpost-detail.component';
 export { BlogpostListComponent } from './blogpost-list/blogpost-list.component';
 export { BlogpostRecentComponent } from './blogpost-recent/blogpost-recent.component';
-export { CategoriesComponent } from './categories/categories.component';
 export {BlogpostFeaturedComponent} from './blogpost-featured/blogpost-featured.component';
-
+export { CategoriesComponent } from './categories/categories.component';
+export { PacientesComponent } from './pacientes/pacientes.component';
+export { QueesCirugiaComponent } from './quees-cirugia/quees-cirugia.component';
+export {TipsComponent} from './tips/tips.component';
+export {TraumaComponent} from './trauma/trauma.component';
+export {AyudarteComponent} from './ayudarte/ayudarte.component';
+export {ServiciosComponent} from './servicios/servicios.component';
+export{PacienteDetailComponent} from './pacientes-detail/paciente-detail.component';
+export{PacienteRecentComponent} from './paciente-recent/paciente-recent.component';
+export {ProximamenteComponent} from './proximamente/proximamente.component';
 
 
 export { DirectorioComponent } from './directorio/directorio.component';
 export { PortalEducativoComponent } from './portal-educativo/portal-educativo.component';
+
+export { CongresoComponent } from './congreso/congreso.component';
 

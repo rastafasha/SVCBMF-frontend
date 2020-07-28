@@ -3,34 +3,52 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
-import { DirectorioComponent, BlogpostListComponent, BlogpostDetailComponent, 
+import { DirectorioComponent, BlogpostListComponent, BlogpostDetailComponent,
   RevistaComponent, SolvenciasComponent, NosotrosComponent, ResenaHistoricaComponent,
   JuntaNacionalComponent, JuntaRegionalComponent, ActaConstitutivaComponent, DocumentosComponent,
-  HomeComponent, PortalEducativoComponent } from './pages/index.paginas';
+  HomeComponent, PortalEducativoComponent, PacientesComponent, QueesCirugiaComponent, TipsComponent,
+  TraumaComponent, AyudarteComponent, ServiciosComponent, PacienteDetailComponent, ProximamenteComponent } from './pages/index.paginas';
 
 import { ContactFormComponent} from './cmspage/contact-form/contact-form.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'directorio', component: DirectorioComponent},
-  {path: 'blog', component: BlogpostListComponent},
-  {path: 'blog/:id', component: BlogpostDetailComponent},
-  {path: 'revista', component: RevistaComponent},
-  {path: 'documentos', component: DocumentosComponent},
-  {path: 'solvencias', component: SolvenciasComponent},
-  
+
+
+  // Nostros
   {path: 'nosotros', component: NosotrosComponent},
   {path: 'resena-historica', component: ResenaHistoricaComponent},
   {path: 'junta-directiva-nacional', component: JuntaNacionalComponent},
   {path: 'junta-directiva-regional', component: JuntaRegionalComponent},
   {path: 'acta-constitutiva', component: ActaConstitutivaComponent},
+
+  // Area profesional
+  {path: 'documentos', component: DocumentosComponent},
+  {path: 'solvencias', component: SolvenciasComponent},
+
+  // Area pacientes
+  {path: 'tips', component: PacientesComponent},
+  {path: 'tips/:id', component: PacienteDetailComponent},
+
+  {path: 'como-podemos-ayudarte', component: AyudarteComponent},
+  {path: 'que-es-cirugia-bucal-y-buco-maxilofacial', component: QueesCirugiaComponent},
+  {path: 'como-podemos-ayudarte', component: TipsComponent},
+  {path: 'trauma-como-problema-de-salud-publica', component: TraumaComponent},
+  {path: 'servicios-de-cirugia-en-el-sistema-publico-de-salud', component: ServiciosComponent},
+
+  {path: 'blog', component: BlogpostListComponent},
+  {path: 'blog/:id', component: BlogpostDetailComponent},
+
+  {path: 'revista', component: RevistaComponent},
   {path: 'contacto', component: ContactFormComponent},
 
   { path: 'portal-educativo', component: PortalEducativoComponent},
-  
-  
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', pathMatch: 'full', redirectTo: 'home'}
+  { path: 'miembros', component: ProximamenteComponent},
+
+
+  {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 
 @NgModule({

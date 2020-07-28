@@ -1,15 +1,22 @@
 <div class="container">
     <div class="row">
-
+        <!--Including the pagination control.-->
+        <div class="row mt-4 mb-4">
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+            </div>
+        </div>
+        <div class="clear"></div><br>
         <div class="uppp mt-2">
             <div id="links" class=" gallery row Contenedor_imagen Contenedor_imagen1 Contenedor_imagenMarf ">
 
 
-                <a href="{{galeria.image}}" data-gallery class="col-6 col-sm-3" *ngFor=" let galeria of galerias">
+                <a href="{{galeria.image}}" data-gallery class="col-6 col-sm-3" *ngFor=" let galeria of galerias | paginate: { itemsPerPage: count, currentPage: p }">
                     <img src="{{galeria.image}}" alt="svcbmf" style="height: 240px;">
                 </a>
             </div>
         </div>
+
 
     </div>
 
@@ -45,3 +52,55 @@
             </div>
         </div>
     </div>
+
+
+    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+
+    <script src="assets/js/galeria.js"></script>
+    <script src="assets/js/bootstrap-gallery.min.js"></script>
+    <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+
+
+
+
+    <script>
+        $('.gallery').bootstrapGallery();
+
+        $('.gallery-overview').bootstrapGallery({
+            iconset: "fontawesome"
+        });
+        BootstrapGallery.defaults = {
+            modalAttrs: {
+                "id": "gallery-modal",
+                "class": "modal fade",
+                "tabindex": "-1",
+                "role": "dialog",
+                "aria-hidden": "true"
+            },
+            containerAttrs: {
+                "class": "img-container"
+            },
+            wrapperAttrs: {
+                "class": "img-wrapper"
+            },
+            imgAttrs: {
+                "class": "img-responsive",
+                "src": "#"
+            },
+            closeBtnAttrs: {
+                "class": "btn-close glyphicon glyphicon-remove",
+                "aria-hidden": "true"
+            },
+            btnPrevAttrs: {
+                "class": "btn-prev glyphicon glyphicon-chevron-left"
+            },
+            btnNextAttrs: {
+                "class": "btn-next glyphicon glyphicon-chevron-right"
+            },
+            indicatorAttrs: {
+                "class": "indicator glyphicon glyphicon-refresh"
+            },
+            indicatorThreshold: 100,
+            swipeThreshold: 30
+        };
+    </script>

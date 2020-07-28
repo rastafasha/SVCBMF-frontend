@@ -25,3 +25,40 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal paypal -->
+<div class="modal fade" id="pagopaypal" tabindex="-1" role="dialog" aria-labelledby="pagopaypalModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pagopaypalModalLabel">pago paypal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="A3BX3KZBJN6V8">
+                    <table>
+                        <tr>
+                            <td><input type="hidden" name="on0" value="Tipos de Inscripción">Tipos de Inscripción</td>
+                        </tr>
+                        <tr>
+                            <td><select name="os0">
+                            <option value="Miembro SVCBMF Solvente">Miembro SVCBMF Solvente $60.00 USD</option>
+                            <option value="Residente o Estudiante Venezolano">Residente o Estudiante Venezolano $80.00 USD</option>
+                            <option value="Profesionales de la Salud">Profesionales de la Salud $145.00 USD</option>
+                            <option value="Profesionales o Residentes Extranjeros">Profesionales o Residentes Extranjeros $170.00 USD</option>
+                    </select> </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

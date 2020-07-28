@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 // editor
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
+
 // pipe
 import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 import { OrderModule } from 'ngx-order-pipe';
@@ -22,19 +23,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // paginacion
 import { NgxPaginationModule } from 'ngx-pagination';
 
-//Blog
+
 import { BlogpostListComponent, BlogpostDetailComponent, BlogpostRecentComponent, BlogpostFeaturedComponent, 
   CategoriesComponent,RevistaComponent, SolvenciasComponent, NosotrosComponent, ResenaHistoricaComponent,
   JuntaNacionalComponent, JuntaRegionalComponent, ActaConstitutivaComponent, DocumentosComponent,
-  HomeComponent, PortalEducativoComponent } from './pages/index.paginas';
+  HomeComponent, PortalEducativoComponent, PacientesComponent, QueesCirugiaComponent, TipsComponent,
+  TraumaComponent, AyudarteComponent, ServiciosComponent, PacienteDetailComponent, PacienteRecentComponent, 
+  ProximamenteComponent, CongresoComponent } from './pages/index.paginas';
 
 
 //shared
 import { SharedModule } from './shared/shared.modulo';
+
 import { DirectorioComponent } from './pages/directorio/directorio.component';
 import { ContactFormComponent } from './cmspage/contact-form/contact-form.component';
+import {CongresoFormComponent} from './cmspage/congreso-form/congreso-form.component';
 
 import { ShareButtonsModule } from '@ngx-share/buttons';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -58,7 +65,18 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     BlogpostDetailComponent, 
     BlogpostRecentComponent,
     BlogpostFeaturedComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    PacientesComponent,
+    QueesCirugiaComponent,
+    TipsComponent,
+    TraumaComponent,
+    AyudarteComponent,
+    ServiciosComponent,
+    PacienteDetailComponent,
+    PacienteRecentComponent,
+    ProximamenteComponent,
+    CongresoComponent,
+    CongresoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -72,12 +90,14 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     ReactiveFormsModule,
     NgxPaginationModule,
     SharedModule,
-    ShareButtonsModule
+    ShareButtonsModule,
+    NgbModule
   ],
   exports:[
     EscapeHtmlPipe,
     KeysPipe,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

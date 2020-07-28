@@ -6,6 +6,7 @@ export class Blog {
     user_id: number;
     description: string;
     image: string;
+    slug: string;
     is_featured: boolean;
     is_active: boolean;
     created_at: Date;

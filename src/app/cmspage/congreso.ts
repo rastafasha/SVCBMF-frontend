@@ -1,0 +1,32 @@
+export class Congreso {
+    id: number;
+    nombre: string;
+    apellido: string;
+    nacionalidad: string;
+    membresia: string;
+    cedulapassport: string;
+    dirprofesional: string;
+    pais: string;
+    telefono: string;
+    email: string;
+    verificaemail: string;
+    condicionAcademica: string;
+    descripcionCursos: string;
+    anualidades: string;
+    inscripcionSvcbmf: string;
+    otrosItemsPagados: string;
+    especialidad: string;
+    tipoPago: string;
+    codConfirmacion: string;
+    montocancelado: string;
+    cursos: string;
+    edad: string;
+    descOtrosItemsPagados: string;
+    fechaNac: string;
+    tipoPagonscripcion: string;
+    fecha: string;
+    observaciones: string;
+    image: string;
+    is_active: boolean;
+    createdAt: Date;
+}

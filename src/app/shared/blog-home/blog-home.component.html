@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-sm-6  fr-view" style="margin-bottom: 20px;" *ngFor="let blog of blogs | slice:0:4 ">
+    <div class=" col-12 col-sm-12 col-md-6  fr-view" style="margin-bottom: 20px;" *ngFor="let blog of blogs | slice:0:4 ">
         <div class=" card cardblog">
             <div class="card-body ">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-5 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"></div>
-                    <div class="col-xs-12 col-sm-7" style="padding-top: 10px;">
-                        <a href="blog/{{blog.id}}" target="_self">
+                    <div class="col-12 col-sm-12 col-md-12 imgnott nopadd" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"></div>
+                    <div class="col-12 col-sm-12 col-md-12" style="padding-top: 10px;">
+                        <a [routerLink]="['/blog', blog.id]">
                             <h5>{{blog.title}}</h5>
                         </a>
                         <p>{{blog.short_desc}}</p>

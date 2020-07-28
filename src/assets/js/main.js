@@ -138,7 +138,7 @@ jQuery(document).ready(function($) {
     $(".testimonials-carousel").owlCarousel({
         autoplay: true,
         dots: true,
-        loop: true,
+        loop: false,
         responsive: {
             0: {
                 items: 1
