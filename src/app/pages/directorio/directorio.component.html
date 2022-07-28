@@ -180,7 +180,13 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header elementos-modal">
-                                    <img src="./assets/img/logo.png" class="img-circle">
+                                    <div *ngIf="!doctores.image">
+                                        <img src="./assets/img/logo.png" class="img-circle">
+                                    </div>
+                                    <div *ngIf="doctores.image">
+                                        <img src="{{imagenSerUrl}}/directorio/{{doctores.image}}" class="img-circle">
+
+                                    </div>
                                     <h3> {{doctores.nombre}}</h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 </div>
