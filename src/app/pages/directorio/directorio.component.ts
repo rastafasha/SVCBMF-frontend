@@ -11,10 +11,10 @@ import { environment } from '../../../environments/environment';
 })
 export class DirectorioComponent implements OnInit {
 
-  directorios: Directorio;
+  directories: Directorio;
 
   error: string;
-  doctores;
+  doctores:any;
 
   private http: HttpClient;
 
@@ -42,18 +42,25 @@ export class DirectorioComponent implements OnInit {
 
     handler: HttpBackend) {
     this.http = new HttpClient(handler);
+
    }
 
   ngOnInit() {
 
-    this.directorioService.getDirectorios().subscribe(
-      (data: Directorio) => this.directorios = data,
-      error => this.error = error
-    );
     window.scrollTo(0,0);
+    // this.getDirectories();
 
 
+  }
 
+  getDirectories(): void {
+    this.directorioService.getDirectorios().subscribe(
+      res =>{
+        this.doctores = res;
+        error => this.error = error;
+        // console.log(this.doctores);
+      }
+    );
   }
 
   toggleClass(id: number){
@@ -61,23 +68,25 @@ export class DirectorioComponent implements OnInit {
   }
 
 
-  buscarDirectorio( termino: string) {
+  // buscarDirectorio( termino: string) {
 
-    this.directorioService.buscarDirectorio( termino )
-      .subscribe( directorios => this.directorios = directorios);
+  //   this.directorioService.buscarDirectorio( termino )
+  //     .subscribe( directorios => this.doctores = directorios);
 
 
-  }
+  // }
 
   search( text: string) {// funciona, devuelve la busqueda
 
     if(this.doctores == undefined){
       console.log('pendiente');
+
     }
 
 
     if( this.search.length == 0){
       return;
+
     }
 
     return this.http.get(this.ServerUrl + 'api_directorio/search?text=' + text )
@@ -88,14 +97,14 @@ export class DirectorioComponent implements OnInit {
         'json': ()=>{
           return doctores;
         }
-
       };
+      // console.log(this.doctores);
       // devolver el array
       const mapped = Object.keys(doctores)
       .map(key => ({type: key, value: doctores[key]}));
 
       this.doctores = doctores;
-
+      // console.log(this.doctores);
       });
 
   }

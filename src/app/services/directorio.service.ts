@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Directorio } from '../models/directorio';
 import { HttpClient, HttpErrorResponse, HttpBackend } from '@angular/common/http';
 import { throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -12,6 +14,7 @@ export class DirectorioService {
 
   ServerUrl = environment.baseUrl;
   errorData: {};
+  doctores: Directorio;
 
   private http: HttpClient;
 
@@ -25,6 +28,14 @@ export class DirectorioService {
       catchError(this.handleError)
     );
   }
+
+  // getDirectorios() {
+  //   const url = `${this.ServerUrl}/api_directorio/Directorios/`;
+  //   return this.http.get<any>(url)
+  //     .pipe(
+  //       map((resp:{ok: boolean, directories: Directorio}) => resp.directories)
+  //     )
+  // }
 
 
   getDirectorio(id: number) {
@@ -42,14 +53,16 @@ export class DirectorioService {
 
   buscarDirectorio( termino: string) {
 
-    let url = this.ServerUrl + 'api_directorio/Directorios/buscar/' + termino;
+    let url = this.ServerUrl + 'api_directorio/search?text=' + termino;
     return this.http.get( url )
-      .pipe(map((resp: any) => resp.directorios));
+      .pipe(map((resp: Directorio) => {
+        this.doctores = resp;
+      }));
 
   }
 
   mostrarDirectorios( desde: number = 0 ) {
-  
+
     let url = this.ServerUrl  + 'api_directorio/Directorios/medico?desde=' + desde;
     return this.http.get( url );
 
@@ -60,6 +73,7 @@ export class DirectorioService {
     return this.http.get(url)
     .pipe(map((resp: any) => resp.directorios));
   }
+
 
 
   private handleError(error: HttpErrorResponse) {

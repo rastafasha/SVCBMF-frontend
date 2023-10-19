@@ -267,13 +267,10 @@ body {
     transform: translate3d(0, 0, 0);
 }
 
-
-}
 .carousel-control {
     z-index: 2;
 }
 
-}
 @media (max-width: 768px) {
     .texto {
         top: 200px;
@@ -317,6 +314,7 @@ body {
         -o-background-size: contain;
     }
 }
+
 @media (min-width: 769px) and (max-width: 990px) {
     .texto {
         top: 200px;
@@ -341,6 +339,7 @@ body {
         padding: 20px;
     }
 }
+
 .slider .picsum-img-wrapper img {
     height: auto;
 }

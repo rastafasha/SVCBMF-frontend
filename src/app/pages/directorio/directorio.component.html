@@ -21,7 +21,7 @@
             <form class="form-horizontal">
                 <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                     <div class="input-group">
-                        <input type="search" name="search" #input (keyup)="search(input.value)" type="text" class="form-control col-xs-12" placeholder="Buscar.." aria-describedby="button-addon1" class="form-control border-0 bg-light">
+
                         <div class="input-group-append">
                             <button id="button-addon1" type="submit" class="btn btn-link text-primary" (click)="search(input.value)" name="submit" data-toggle="tooltip" title="mostrar todos"><i class="fa fa-search"></i></button>
                         </div>
@@ -35,80 +35,100 @@
 <!---Nuevo-->
 <div class="container mt-5 mb-3 escritorio">
     <div class="row elemendirec">
-        <div class="fr-view" *ngFor=" let doctores of doctores.doctores | keys | paginate: { itemsPerPage: count, currentPage: p }">
+        <div class="fr-view" *ngFor=" let doctor of doctores.doctores | keys | paginate: { itemsPerPage: count, currentPage: p }">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="elementostop">
-                        <div *ngIf="!doctores.image">
+                        <div *ngIf="!doctor.image">
                             <div class="icon icon1">
                                 <img src="./assets/img/logo.png" class="img-circle">
                             </div>
                         </div>
-                        <div *ngIf="doctores.image">
+                        <div *ngIf="doctor.image">
                             <div class="icon icon1">
-                                <img src="{{imagenSerUrl}}/directorio/{{doctores.image}}" class="img-circle">
+                                <img src="{{imagenSerUrl}}/directorio/{{doctor.image}}" class="img-circle">
                             </div>
 
                         </div>
                         <div class="ms-2 c-details">
-                            <h6 class="mb-0">{{doctores.surname}}, {{doctores.nombre}} </h6>
-                            <span>{{doctores.especialidad}}</span>
-                            <span>{{doctores.ciudad}}</span>
+                            <h6 class="mb-0">{{doctor.surname}}, {{doctor.nombre}} </h6>
+                            <span>{{doctor.especialidad}}</span>
+                            <span>{{doctor.ciudad}}</span>
                         </div>
-                        <div *ngIf="doctores.vcard">
+                        <!-- boton mostrar vcard -->
+                        <!-- <div *ngIf="doctores.vcard">
                             <div class="icon icon2" style="cursor: pointer ;">
-                                <a data-toggle="modal" [attr.data-target]="'#vcard_' + doctores.id"><i class="fa fa-qrcode" ></i></a>
+                                <a data-toggle="modal" [attr.data-target]="'#vcard_' + doctor.id"><i class="fa fa-qrcode" ></i></a>
                             </div>
 
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
                 <div>
 
-                    <p><i class="fa fa-envelope"></i>{{doctores.email}}</p>
-                    <div *ngIf="doctores.website">
-                        <p><i class="fa fa-laptop"></i>{{doctores.website}}</p>
+                    <p><i class="fa fa-envelope"></i>{{doctor.email}}</p>
+                    <div *ngIf="doctor.website">
+                        <p><i class="fa fa-laptop"></i>{{doctor.website}}</p>
                     </div>
-                    <div *ngIf="doctores.telprincipal">
-                        <p><i class="fa fa-phone"></i>{{doctores.telprincipal}}</p>
+                    <div *ngIf="doctor.telprincipal">
+                        <p><i class="fa fa-phone"></i>{{doctor.telprincipal}}</p>
                     </div>
-                    <div *ngIf="doctores.tel1">
-                        <p><i class="fa fa-phone"></i>{{doctores.tel1}}</p>
+                    <div *ngIf="doctor.tel1">
+                        <p><i class="fa fa-phone"></i>{{doctor.tel1}}</p>
                     </div>
-                    <div *ngIf="doctores.telhome">
-                        <p><i class="fa fa-phone"></i>{{doctores.telhome}}</p>
+                    <div *ngIf="doctor.telhome">
+                        <p><i class="fa fa-phone"></i>{{doctor.telhome}}</p>
                     </div>
 
-                    <div *ngIf="doctores.telefonos">
-                        <p><i class="fa fa-phone"></i>{{doctores.telefonos}}</p>
+                    <div *ngIf="doctor.telefonos">
+                        <p><i class="fa fa-phone"></i>{{doctor.telefonos}}</p>
                     </div>
-                    <p [innerHTML]="doctores.direccion | keepHtml"></p>
+                    <p [innerHTML]="doctor.direccion | keepHtml"></p>
                     <div class="redess">
-                        <div *ngIf="doctores.facebook">
-                            <p><i class="fa fa-facebook"></i>{{doctores.facebook}}</p>
+                        <div *ngIf="doctor.facebook">
+                            <p>
+                                <a href="https://facebook.com/{{doctor.facebook}}" target="_blank">
+
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </p>
                         </div>
-                        <div *ngIf="doctores.instagram">
-                            <p><i class="fa fa-instagram"></i>{{doctores.instagram}}</p>
+                        <div *ngIf="doctor.instagram">
+                            <p>
+                                <a href="https://instagram.com/{{doctor.instagram}}" target="_blank">
+
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </p>
                         </div>
-                        <div *ngIf="doctores.twitter">
-                            <p><i class="fa fa-twitter"></i>{{doctores.twitter}}</p>
+                        <div *ngIf="doctor.twitter">
+                            <p>
+                                <a href="https://twitter.com/{{doctor.twitter}}" target="_blank">
+
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </p>
                         </div>
-                        <div *ngIf="doctores.linkedin">
-                            <p><i class="fa fa-linkedin"></i>{{doctores.linkedin}}</p>
+                        <div *ngIf="doctor.linkedin">
+                            <p>
+                                <a href="https://linkedin.com/{{doctor.linkedin}}" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!---modal QR-->
-            <div class="modal fade modalproductos" id="vcard_{{doctores.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade modalproductos" id="vcard_{{doctor.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header ">
                             <div class="cabz">
                                 <h5>Código QR vcard de</h5>
-                                <h6>{{doctores.surname}}, {{doctores.nombre}} </h6>
+                                <h6>{{doctor.surname}}, {{doctor.nombre}} </h6>
                                 <p>Para descargar: boton derecho, (Opcion guardar imagen como)</p>
                             </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -119,7 +139,7 @@
                             <div class="card cardhome">
                                 <div class="card-body">
 
-                                    <qr-code class="code" id="box" [value]="doctores.vcard" [size]="250">
+                                    <qr-code class="code" id="box" [value]="doctor.vcard" [size]="250">
                                         <img>
                                     </qr-code>
                                     <!-- <a *ngIf="doctores.vcard" [href]="href" (click)="downloadImage()" download>Download Image</a> -->
@@ -158,94 +178,129 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="col-xs-12 col-sm-6 col-md-4 fr-view card-m" *ngFor=" let doctores of doctores.doctores | keys | paginate: { itemsPerPage: count, currentPage: p }; let i=index">
+                <div class="col-xs-12 col-sm-6 col-md-4 fr-view card-m" *ngFor=" let doctor of doctores.doctores | keys | paginate: { itemsPerPage: count, currentPage: p }; let i=index">
                     <div class=" card ">
                         <div class="carbodymovil">
                             <div class="col-xs-12">
                                 <div class="elementos">
-                                    <img src="./assets/img/logo.png" class="img-circle">
-                                    <p><a class="btn btn-link btn-outline-primary" data-toggle="modal" [attr.data-target]="'#' + doctores.id"> + info</a></p>
+                                    <div class="imagenes">
+                                        <div *ngIf="!doctor.image">
+                                            <img src="./assets/img/logo.png" class="img-circle">
+                                        </div>
+                                        <div *ngIf="doctor.image">
+                                            <img src="{{imagenSerUrl}}/directorio/{{doctor.image}}" class="img-circle">
+
+                                        </div>
+                                    </div>
+                                    <div class="infodatos">
+                                        <h5 class="card-title"><b>{{doctor.surname}}, {{doctor.nombre}} </b></h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{doctor.especialidad}}</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{doctor.ciudad}}</h6>
+                                    </div>
+                                    <!-- <div class="addicinfo">
+                                        <h6 class="card-subtitle mb-2 text-muted">{{doctor.especialidad}}</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{doctor.ciudad}}</h6>
+                                    </div> -->
+                                    <button class="btn btn-link btn-outline-primary" data-toggle="modal" [attr.data-target]="'#' + doctor.id"> + info</button>
                                 </div>
 
-                                <h5 class="card-title"><b>{{doctores.nombre}} {{doctores.surname}}</b></h5>
-                                <h6 class="card-subtitle mb-2 text-muted">{{doctores.especialidad}}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted">{{doctores.ciudad}}</h6>
+
                             </div>
                         </div>
                     </div>
 
 
                     <!---modal-->
-                    <div class="modal fade modalproductos" id="{{doctores.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade modalproductos" id="{{doctor.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header elementos-modal">
-                                    <div *ngIf="!doctores.image">
+                                    <div *ngIf="!doctor.image">
                                         <img src="./assets/img/logo.png" class="img-circle">
                                     </div>
-                                    <div *ngIf="doctores.image">
-                                        <img src="{{imagenSerUrl}}/directorio/{{doctores.image}}" class="img-circle">
+                                    <div *ngIf="doctor.image">
+                                        <img src="{{imagenSerUrl}}/directorio/{{doctor.image}}" class="img-circle">
 
                                     </div>
-                                    <h3> {{doctores.nombre}}</h3>
+                                    <h3> {{doctor.surname}}, {{doctor.nombre}}</h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 </div>
                                 <div class="modal-body modalserv">
 
                                     <div class=" card cardhome ">
                                         <div class="card-body ">
-                                            <p> <i class="fa fa-sitemap"></i> {{doctores.especialidad}}</p>
-                                            <p><i class="fa fa-envelope"></i>{{doctores.email}}</p>
-                                            <div *ngIf="doctores.website">
-                                                <p><i class="fa fa-laptop"></i>{{doctores.website}}</p>
+                                            <p> <i class="fa fa-sitemap"></i> {{doctor.especialidad}}</p>
+                                            <p><i class="fa fa-envelope"></i>{{doctor.email}}</p>
+                                            <div *ngIf="doctor.website">
+                                                <p><i class="fa fa-laptop"></i>{{doctor.website}}</p>
                                             </div>
-                                            <div *ngIf="doctores.telprincipal">
-                                                <p><i class="fa fa-phone"></i>{{doctores.telprincipal}}</p>
-                                            </div>
-
-                                            <div *ngIf="doctores.tel1">
-                                                <p><i class="fa fa-phone"></i>{{doctores.tel1}}</p>
-                                            </div>
-                                            <div *ngIf="doctores.telhome">
-                                                <p><i class="fa fa-phone"></i>{{doctores.telhome}}</p>
-                                            </div>
-                                            <div *ngIf="doctores.telefonos">
-                                                <p><i class="fa fa-phone"></i>{{doctores.telefonos}}</p>
+                                            <div *ngIf="doctor.telprincipal">
+                                                <p><i class="fa fa-phone"></i>{{doctor.telprincipal}}</p>
                                             </div>
 
-                                            <div *ngIf="doctores.direccion">
-                                                <p [innerHTML]="doctores.direccion | keepHtml"></p>
+                                            <div *ngIf="doctor.tel1">
+                                                <p><i class="fa fa-phone"></i>{{doctor.tel1}}</p>
                                             </div>
-                                            <div *ngIf="doctores.direccion1">
-                                                <p [innerHTML]="doctores.direccion1 | keepHtml"></p>
+                                            <div *ngIf="doctor.telhome">
+                                                <p><i class="fa fa-phone"></i>{{doctor.telhome}}</p>
                                             </div>
-                                            <p><i class="fa fa-map-marker"></i>{{doctores.estado}}</p>
-                                            <p><i class="fa fa-map-marker"></i>{{doctores.ciudad}}</p>
+                                            <div *ngIf="doctor.telefonos">
+                                                <p><i class="fa fa-phone"></i>{{doctor.telefonos}}</p>
+                                            </div>
+
+                                            <div *ngIf="doctor.direccion">
+                                                <p [innerHTML]="doctor.direccion | keepHtml"></p>
+                                            </div>
+                                            <div *ngIf="doctor.direccion1">
+                                                <p [innerHTML]="doctor.direccion1 | keepHtml"></p>
+                                            </div>
+                                            <p><i class="fa fa-map-marker"></i>{{doctor.estado}}</p>
+                                            <p><i class="fa fa-map-marker"></i>{{doctor.ciudad}}</p>
                                             <div class="redess">
-                                                <div *ngIf="doctores.facebook">
-                                                    <p><i class="fa fa-facebook"></i>{{doctores.facebook}}</p>
+                                                <div *ngIf="doctor.facebook">
+                                                    <p>
+                                                        <a href="https://facebook.com/{{doctor.facebook}}" target="_blank">
+
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </p>
                                                 </div>
-                                                <div *ngIf="doctores.instagram">
-                                                    <p><i class="fa fa-instagram"></i>{{doctores.instagram}}</p>
+                                                <div *ngIf="doctor.instagram">
+                                                    <p>
+                                                        <a href="https://instagram.com/{{doctor.instagram}}" target="_blank">
+
+                                                            <i class="fa fa-instagram"></i>
+                                                        </a>
+                                                    </p>
                                                 </div>
-                                                <div *ngIf="doctores.twitter">
-                                                    <p><i class="fa fa-twitter"></i>{{doctores.twitter}}</p>
+                                                <div *ngIf="doctor.twitter">
+                                                    <p>
+                                                        <a href="https://twitter.com/{{doctor.twitter}}" target="_blank">
+
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </p>
                                                 </div>
-                                                <div *ngIf="doctores.linkedin">
-                                                    <p><i class="fa fa-linkedin"></i>{{doctores.linkedin}}</p>
+                                                <div *ngIf="doctor.linkedin">
+                                                    <p>
+                                                        <a href="https://linkedin.com/{{doctor.linkedin}}" target="_blank">
+                                                            <i class="fa fa-linkedin"></i>
+                                                        </a>
+                                                    </p>
                                                 </div>
                                             </div>
 
                                             <br>
-
-                                            <div class="qrcode">
+                                            <!-- mostrar vcard -->
+                                            <!-- <div class="qrcode">
                                                 <div *ngIf="doctores.vcard">
                                                     <qr-code class="code" [value]="doctores.vcard" [size]="250">
                                                         <img>
                                                     </qr-code>
                                                 </div>
-                                                <!-- <a *ngIf="display" [href]="href" (click)="downloadImage()" download>Download Image</a> -->
-                                            </div>
+                                                boton descargar
+                                                <a *ngIf="display" [href]="href" (click)="downloadImage()" download>Download Image</a>
+                                            </div> -->
 
                                         </div>
 
